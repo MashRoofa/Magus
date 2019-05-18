@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Magus - Guessing Game</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <canvas style="position:absolute" id="icons-canvas"></canvas>
+
+        <div id="start-container" class="container container-fluid">
+            <div  class="row justify-content-center" style="height:100vh">
+                <div class="col-10  align-self-center">
+                    <div id="description-panel" class="jumbotron panel-background p-2">
+                        <h1 class="text-center title">Magus</h1>
+                        <p class="lead text-center">
+                           <strong>Memorize a falling icon and let me guess it!</strong>
+                          </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    <button id="start-button" type="button" class="btn btn-primary btn-lg btn-block">Start Guessing Game</button>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div id="game-container" class="visually-hidden">
+                <div class="container ">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 mt-5">
+                                <h1 class="text-center">Can you see your icon here?</h1>
+                            </div>
+                            <div class="col-sm-12 col-md-10 col-lg-8 mt-5">
+                                <div id="card-area" class="jumbotron panel-background p-3">
+                                    <div id="card" class="row">
+                                       
+                                            
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="">
+                        <div class="container">
+                            <div class="row p-2 justify-content-between">
+                                <div class="col-sm-12 col-md-5 p-1">
+                                        <button onClick="buildCards('yes')" type="button" class="btn btn-primary btn-block">Yes i can see it!</button>
+                                     
+                                </div>
+                                <div class="col-sm-12 col-md-5 p-1">
+                                        <button onClick="buildCards('no')" type="button" class="btn btn-secondary btn-block">No, the icon is not here.</button>
+                                </div>
+
+                                
+                            </div>
+                            <div class="row justify-content-center">
+                                    <div class="col-6 mt-2 mb-2">
+                                            <button onClick="restart()" type="button" class="btn btn-danger btn-block">Restart Game</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+        </div>
+
+
+
+
+        <div id="result-container" class="container container-fluid visually-hidden">
+                <div  class="row justify-content-center" style="height:100vh">
+                    <div class="col-10  align-self-center">
+                        <div id="description-panel" class="jumbotron panel-background p-2">
+                                <h1 class="text-center title">Magus</h1>
+                            <p class="lead text-center">
+                               <strong id="result-message">The icon you though of, was this!</strong>
+                               <br>
+                               <img id="result-image" src="" alt="" width="100" height="100">
+                              </p>
+                              
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-12 col-md-6">
+                        <button onClick=restart() id="restart-button" type="button" class="btn btn-primary btn-lg btn-block">Play Again!</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+        
+
+
+        <script src="cards.js"></script>
+        <script src="svg_files.js"></script>
+        <script src="falling_icons.js"></script>
+        <script src="script.js"></script>
+        <script>iconStorm()</script>
+    </body>
+</html>
